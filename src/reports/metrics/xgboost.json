@@ -1,0 +1,17 @@
+{
+  "modelo": "XGBoost",
+  "accuracy": 0.9997144746333253,
+  "precision": 0.9931740614334471,
+  "recall": 0.9906382978723405,
+  "f1_score": 0.9919045590115041,
+  "f2_score": 0.9911444141689373,
+  "matriz_confusion": {
+    "verdaderos_negativos": 65361,
+    "falsos_positivos": 8,
+    "falsos_negativos": 11,
+    "verdaderos_positivos": 1164
+  },
+  "tasa_falsos_negativos": 0.009361702127659575,
+  "tiempo_entrenamiento_segundos": null,
+  "roc_auc": 0.9998814976062244
+}

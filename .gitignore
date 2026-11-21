@@ -1,0 +1,62 @@
+# ============================================
+# Reglas de la plantilla de la universidad
+# ============================================
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+.env
+.env.local
+.env.*.local
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+dist/
+build/
+*.log
+tmp/
+temp/
+
+# ============================================
+# Python y entornos virtuales
+# ============================================
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+venv/
+.venv/
+env/
+ENV/
+
+# ============================================
+# Jupyter
+# ============================================
+.ipynb_checkpoints/
+
+# ============================================
+# Dataset CIC-IDS2017 y datos derivados (pesan varios GB; no se versionan).
+# Se conservan solo los .gitkeep para mantener las carpetas.
+# ============================================
+src/data/raw/*
+src/data/processed/*
+src/data/sequences/*
+!src/data/raw/.gitkeep
+!src/data/processed/.gitkeep
+!src/data/sequences/.gitkeep
+
+# ============================================
+# Credenciales
+# ============================================
+kaggle.json
+
+# ============================================
+# Logs de entrenamiento
+# ============================================
+logs/
+runs/
+mlruns/
+wandb/

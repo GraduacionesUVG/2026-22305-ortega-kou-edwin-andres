@@ -1,0 +1,114 @@
+{
+  "modelo": "XGBoost",
+  "umbral": 0.002,
+  "hiperparametros": {
+    "learning_rate": 0.3,
+    "max_depth": 6,
+    "min_child_weight": 1,
+    "n_estimators": 1000,
+    "early_stopping_rounds": 50,
+    "eval_metric": "aucpr",
+    "tree_method": "hist",
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "best_iteration": 114,
+  "n_test": 67556,
+  "ataques_test": 1104,
+  "flujos_por_tipo": {
+    "DoS slowloris": 915,
+    "DoS Slowhttptest": 189
+  },
+  "metricas_umbral_principal": {
+    "recall": 0.9728260869565217,
+    "precision": 0.9521276595744681,
+    "f1": 0.9623655913978495,
+    "pr_auc": 0.9738390960634898,
+    "roc_auc": 0.9792022908875274,
+    "matriz_confusion": {
+      "verdaderos_negativos": 66398,
+      "falsos_positivos": 54,
+      "falsos_negativos": 30,
+      "verdaderos_positivos": 1074
+    }
+  },
+  "sensibilidad_no_elegidos": [
+    {
+      "umbral": 0.5,
+      "recall": 0.8188405797101449,
+      "precision": 0.9923161361141603,
+      "f1": 0.8972704714640198,
+      "TP": 904,
+      "FP": 7,
+      "FN": 200,
+      "TN": 66445
+    },
+    {
+      "umbral": 0.01,
+      "recall": 0.9483695652173914,
+      "precision": 0.9785046728971962,
+      "f1": 0.9632014719411224,
+      "TP": 1047,
+      "FP": 23,
+      "FN": 57,
+      "TN": 66429
+    }
+  ],
+  "recall_por_tipo": [
+    {
+      "tipo": "DoS slowloris",
+      "flujos": 915,
+      "detectados": 887,
+      "FN": 28,
+      "recall": 0.9693989071038251
+    },
+    {
+      "tipo": "DoS Slowhttptest",
+      "flujos": 189,
+      "detectados": 187,
+      "FN": 2,
+      "recall": 0.9894179894179894
+    }
+  ],
+  "ic95_bootstrap": {
+    "n_remuestreos": 1000,
+    "semilla": 42,
+    "estratos": [
+      "BENIGN",
+      "DoS slowloris",
+      "DoS Slowhttptest"
+    ],
+    "percentiles": [
+      2.5,
+      97.5
+    ],
+    "intervalos": {
+      "recall": [
+        0.9628623188405797,
+        0.9818840579710145
+      ],
+      "precision": [
+        0.9396845611285266,
+        0.9639972090734253
+      ],
+      "f1": [
+        0.954134232774423,
+        0.9699430239783886
+      ],
+      "FP": [
+        40.0,
+        69.0
+      ],
+      "recall DoS slowloris": [
+        0.9584426229508197,
+        0.980327868852459
+      ],
+      "recall DoS Slowhttptest": [
+        0.9735449735449735,
+        1.0
+      ]
+    }
+  },
+  "tiempo_entrenamiento_segundos": null,
+  "archivo_probabilidades": "reports/xgboost/probabilidades_test.csv"
+}

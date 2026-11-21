@@ -1,0 +1,242 @@
+{
+  "modelo": "XGBoost",
+  "umbral": 0.87,
+  "hiperparametros": {
+    "learning_rate": 0.3,
+    "max_depth": 4,
+    "min_child_weight": 1,
+    "n_estimators": 1000,
+    "early_stopping_rounds": 50,
+    "eval_metric": "aucpr",
+    "tree_method": "hist",
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "scale_pos_weight": 36.73134872417983,
+  "n_benignos_train": 302299,
+  "n_ataques_train": 8230,
+  "best_iteration": 68,
+  "test_completo": {
+    "n": 66544,
+    "ataques": 1175,
+    "flujos_por_tipo": {
+      "DoS slowloris": 915,
+      "DoS Slowhttptest": 260
+    },
+    "metricas_umbral_principal": {
+      "recall": 0.9906382978723405,
+      "precision": 0.9931740614334471,
+      "f1": 0.9919045590115041,
+      "f2": 0.9911444141689373,
+      "pr_auc": 0.9976722917394122,
+      "roc_auc": 0.9998814976062244,
+      "matriz_confusion": {
+        "verdaderos_negativos": 65361,
+        "falsos_positivos": 8,
+        "falsos_negativos": 11,
+        "verdaderos_positivos": 1164
+      }
+    },
+    "sensibilidad_no_elegidos": [
+      {
+        "umbral": 0.5,
+        "precision": 0.9923404255319149,
+        "recall": 0.9923404255319149,
+        "f1": 0.9923404255319149,
+        "f2": 0.9923404255319149,
+        "TP": 1166,
+        "FP": 9,
+        "FN": 9,
+        "TN": 65360
+      },
+      {
+        "umbral": 0.2,
+        "precision": 0.989821882951654,
+        "recall": 0.9931914893617021,
+        "f1": 0.9915038232795242,
+        "f2": 0.992515733968362,
+        "TP": 1167,
+        "FP": 12,
+        "FN": 8,
+        "TN": 65357
+      }
+    ],
+    "recall_por_tipo": [
+      {
+        "tipo": "DoS slowloris",
+        "flujos": 915,
+        "detectados": 907,
+        "FN": 8,
+        "recall": 0.9912568306010929
+      },
+      {
+        "tipo": "DoS Slowhttptest",
+        "flujos": 260,
+        "detectados": 257,
+        "FN": 3,
+        "recall": 0.9884615384615385
+      }
+    ],
+    "ic95_bootstrap": {
+      "n_remuestreos": 1000,
+      "semilla": 42,
+      "estratos": [
+        "BENIGN",
+        "DoS slowloris",
+        "DoS Slowhttptest"
+      ],
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "intervalos": {
+        "recall": [
+          0.9846808510638297,
+          0.9965957446808511
+        ],
+        "precision": [
+          0.9881154499151104,
+          0.9974293059125964
+        ],
+        "f1": [
+          0.9880341880341881,
+          0.995325216126497
+        ],
+        "f2": [
+          0.9861759250079836,
+          0.9957446808510638
+        ],
+        "FP": [
+          3.0,
+          14.0
+        ],
+        "recall DoS slowloris": [
+          0.9846994535519126,
+          0.9967213114754099
+        ],
+        "recall DoS Slowhttptest": [
+          0.9730769230769231,
+          1.0
+        ]
+      }
+    }
+  },
+  "subconjunto_comun_gru": {
+    "archivo_indices": "results/gru/03_evaluacion_test/idx_test_comun.npy",
+    "filas_fuera_de_la_lista": 90,
+    "composicion_fuera_de_la_lista": {
+      "BENIGN": 79,
+      "DoS slowloris": 1,
+      "DoS Slowhttptest": 10
+    },
+    "n": 66454,
+    "ataques": 1164,
+    "flujos_por_tipo": {
+      "DoS slowloris": 914,
+      "DoS Slowhttptest": 250
+    },
+    "metricas_umbral_principal": {
+      "recall": 0.9905498281786942,
+      "precision": 0.9931093884582257,
+      "f1": 0.9918279569892473,
+      "f2": 0.9910606842014784,
+      "pr_auc": 0.997652353243291,
+      "roc_auc": 0.9998807066963729,
+      "matriz_confusion": {
+        "verdaderos_negativos": 65282,
+        "falsos_positivos": 8,
+        "falsos_negativos": 11,
+        "verdaderos_positivos": 1153
+      }
+    },
+    "sensibilidad_no_elegidos": [
+      {
+        "umbral": 0.5,
+        "precision": 0.9922680412371134,
+        "recall": 0.9922680412371134,
+        "f1": 0.9922680412371134,
+        "f2": 0.9922680412371134,
+        "TP": 1155,
+        "FP": 9,
+        "FN": 9,
+        "TN": 65281
+      },
+      {
+        "umbral": 0.2,
+        "precision": 0.9897260273972602,
+        "recall": 0.993127147766323,
+        "f1": 0.9914236706689536,
+        "f2": 0.992445054945055,
+        "TP": 1156,
+        "FP": 12,
+        "FN": 8,
+        "TN": 65278
+      }
+    ],
+    "recall_por_tipo": [
+      {
+        "tipo": "DoS slowloris",
+        "flujos": 914,
+        "detectados": 906,
+        "FN": 8,
+        "recall": 0.9912472647702407
+      },
+      {
+        "tipo": "DoS Slowhttptest",
+        "flujos": 250,
+        "detectados": 247,
+        "FN": 3,
+        "recall": 0.988
+      }
+    ],
+    "ic95_bootstrap": {
+      "n_remuestreos": 1000,
+      "semilla": 42,
+      "estratos": [
+        "BENIGN",
+        "DoS slowloris",
+        "DoS Slowhttptest"
+      ],
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "intervalos": {
+        "recall": [
+          0.9845360824742269,
+          0.9957044673539519
+        ],
+        "precision": [
+          0.9880239520958084,
+          0.9974071432729813
+        ],
+        "f1": [
+          0.9882985314044502,
+          0.9952770442036221
+        ],
+        "f2": [
+          0.9864118163143523,
+          0.9951956558071143
+        ],
+        "FP": [
+          3.0,
+          14.0
+        ],
+        "recall DoS slowloris": [
+          0.9846827133479212,
+          0.9967177242888403
+        ],
+        "recall DoS Slowhttptest": [
+          0.972,
+          1.0
+        ]
+      }
+    }
+  },
+  "tiempo_entrenamiento_segundos": null,
+  "archivo_probabilidades": "reports/xgboost/probabilidades_test.csv",
+  "archivos_metricas_compartidas": [
+    "reports/metrics/xgboost.json",
+    "reports/metrics/xgboost_comun.json"
+  ]
+}
